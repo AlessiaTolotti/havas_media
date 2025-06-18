@@ -382,7 +382,7 @@ export default function Home() {
         </div>
 
         {/* Info Section */}
-        <div id="info" style={styles.infoSection}>
+        <div id="info" style={{ ...styles.infoSection, marginTop: "100px" }}>
           <h2 style={styles.infoTitle}>Come funziona</h2>
           <p style={styles.infoDescription}>
             Il nostro sistema semplifica il processo di normalizzazione dei dati nei file Excel. Carica i tuoi file,

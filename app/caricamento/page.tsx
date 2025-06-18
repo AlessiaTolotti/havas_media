@@ -50,7 +50,7 @@ export default function Caricamento() {
     e.preventDefault()
     setLoading(true)
     setTimeout(() => {
-      router.push("/conferma")
+      router.push("/soluzioni")
       setLoading(false)
     }, 500)
   }
@@ -103,8 +103,10 @@ export default function Caricamento() {
     spinner: {
       width: "20px",
       height: "20px",
-      border: "2px solid transparent",
-      borderTop: "2px solid #856404",
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: "transparent",
+      borderTopColor: "#856404",
       borderRadius: "50%",
       animation: "spin 1s linear infinite",
     },
@@ -114,10 +116,14 @@ export default function Caricamento() {
       padding: "30px",
       marginBottom: "30px",
       boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)",
-      border: "1px solid #e2e8f0",
+      borderWidth: "1px",
+      borderStyle: "solid",
+      borderColor: "#e2e8f0",
     },
     fieldset: {
-      border: "2px solid #e2e8f0",
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: "#e2e8f0",
       borderRadius: "12px",
       padding: "25px",
       marginBottom: "25px",
@@ -142,7 +148,9 @@ export default function Caricamento() {
     input: {
       width: "100%",
       padding: "12px 16px",
-      border: "2px solid #e2e8f0",
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: "#e2e8f0",
       borderRadius: "8px",
       fontSize: "1rem",
       transition: "all 0.3s ease",
@@ -151,7 +159,9 @@ export default function Caricamento() {
     select: {
       width: "100%",
       padding: "12px 16px",
-      border: "2px solid #e2e8f0",
+      borderWidth: "2px",
+      borderStyle: "solid",
+      borderColor: "#e2e8f0",
       borderRadius: "8px",
       fontSize: "1rem",
       backgroundColor: "white",
@@ -161,7 +171,9 @@ export default function Caricamento() {
     button: {
       backgroundColor: "#667eea",
       color: "white",
-      border: "none",
+      borderWidth: "0",
+      borderStyle: "none",
+      borderColor: "transparent",
       padding: "12px 24px",
       borderRadius: "8px",
       fontSize: "1rem",
@@ -172,7 +184,9 @@ export default function Caricamento() {
     buttonSecondary: {
       backgroundColor: "#48bb78",
       color: "white",
-      border: "none",
+      borderWidth: "0",
+      borderStyle: "none",
+      borderColor: "transparent",
       padding: "10px 20px",
       borderRadius: "8px",
       fontSize: "0.9rem",
@@ -183,7 +197,9 @@ export default function Caricamento() {
     buttonDanger: {
       backgroundColor: "#f56565",
       color: "white",
-      border: "none",
+      borderWidth: "0",
+      borderStyle: "none",
+      borderColor: "transparent",
       padding: "8px 16px",
       borderRadius: "6px",
       fontSize: "0.85rem",
@@ -205,7 +221,9 @@ export default function Caricamento() {
       backgroundColor: "#f8f9fa",
       borderRadius: "8px",
       marginBottom: "10px",
-      border: "1px solid #e2e8f0",
+      borderWidth: "1px",
+      borderStyle: "solid",
+      borderColor: "#e2e8f0",
     },
     fileName: {
       fontWeight: "500",
@@ -237,7 +255,9 @@ export default function Caricamento() {
       backgroundColor: "#f8f9fa",
       padding: "20px",
       borderRadius: "12px",
-      border: "1px solid #e2e8f0",
+      borderWidth: "1px",
+      borderStyle: "solid",
+      borderColor: "#e2e8f0",
     },
     formColumn: {
       display: "flex",
@@ -252,6 +272,74 @@ export default function Caricamento() {
     },
     previewTable: {
       marginBottom: "30px",
+    },
+    infoSection: {
+      backgroundColor: "white",
+      borderRadius: "20px",
+      padding: "60px",
+      boxShadow: "0 10px 25px rgba(0, 0, 0, 0.05)",
+      display: "flex",
+      flexDirection: "column" as const,
+      alignItems: "center",
+      textAlign: "center" as const,
+      margin: "80px auto 60px", // Cambiato: più margine sopra e sotto, centrato
+      maxWidth: "1200px", // Aggiunto: stessa larghezza del main
+      borderWidth: "1px",
+      borderStyle: "solid",
+      borderColor: "#e2e8f0",
+    },
+    infoTitle: {
+      fontSize: "2.5rem",
+      fontWeight: "700",
+      color: "#2d3748",
+      marginBottom: "20px",
+    },
+    infoDescription: {
+      fontSize: "1.2rem",
+      color: "#718096",
+      lineHeight: "1.6",
+      maxWidth: "800px",
+      marginBottom: "40px",
+    },
+    stepsGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+      gap: "30px",
+      marginTop: "40px",
+      width: "100%",
+    },
+    stepCard: {
+      backgroundColor: "#f8f9fa",
+      borderRadius: "16px",
+      padding: "30px 20px",
+      textAlign: "center" as const,
+      borderWidth: "1px",
+      borderStyle: "solid",
+      borderColor: "#e2e8f0",
+    },
+    stepNumber: {
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "50px",
+      height: "50px",
+      backgroundColor: "#667eea",
+      color: "white",
+      borderRadius: "50%",
+      fontSize: "1.5rem",
+      fontWeight: "700",
+      marginBottom: "20px",
+    },
+    stepTitle: {
+      fontSize: "1.2rem",
+      fontWeight: "600",
+      color: "#2d3748",
+      marginBottom: "10px",
+    },
+    stepDescription: {
+      fontSize: "0.95rem",
+      color: "#718096",
+      lineHeight: "1.5",
     },
   }
 
@@ -321,8 +409,13 @@ export default function Caricamento() {
                 <fieldset style={styles.fieldset}>
                   <legend style={styles.legend}>Oppure seleziona file esistenti</legend>
                   <div style={styles.formGroup}>
-                    <label style={styles.label}>File lavoro esistente:</label>
-                    <select name="file_lavoro_esistente" style={styles.select}>
+                    <label htmlFor="file_lavoro_esistente" style={styles.label}>File lavoro esistente:</label>
+                    <select 
+                      id="file_lavoro_esistente"
+                      name="file_lavoro_esistente" 
+                      style={styles.select}
+                      aria-label="Seleziona file lavoro esistente"
+                    >
                       <option value="">Seleziona un file...</option>
                       {uploadedFiles.map((f, index) => (
                         <option key={index} value={f}>
@@ -333,8 +426,13 @@ export default function Caricamento() {
                   </div>
 
                   <div style={styles.formGroup}>
-                    <label style={styles.label}>File dizionario esistente:</label>
-                    <select name="file_dizionario_esistente" style={styles.select}>
+                    <label htmlFor="file_dizionario_esistente" style={styles.label}>File dizionario esistente:</label>
+                    <select 
+                      id="file_dizionario_esistente"
+                      name="file_dizionario_esistente" 
+                      style={styles.select}
+                      aria-label="Seleziona file dizionario esistente"
+                    >
                       <option value="">Seleziona un file...</option>
                       {uploadedFiles.map((f, index) => (
                         <option key={index} value={f}>
@@ -423,6 +521,7 @@ export default function Caricamento() {
                     onChange={(e) => setSheetName(e.target.value)}
                     required
                     style={styles.select}
+                    aria-label="Seleziona foglio di lavoro"
                   >
                     {sheetNames.map((name, index) => (
                       <option key={index} value={name}>
@@ -452,7 +551,13 @@ export default function Caricamento() {
                   <label htmlFor="colonna" style={styles.label}>
                     Seleziona colonna:
                   </label>
-                  <select name="colonna" id="colonna" required style={styles.select}>
+                  <select 
+                    id="colonna"
+                    name="colonna" 
+                    required 
+                    style={styles.select}
+                    aria-label="Seleziona colonna da elaborare"
+                  >
                     {colonne.map((col, index) => (
                       <option key={index} value={col}>
                         {col}
@@ -481,6 +586,50 @@ export default function Caricamento() {
           </div>
         )}
       </main>
+
+      {!scelta && (
+        <section style={styles.infoSection}>
+          <h2 style={styles.infoTitle}>Come funziona il sistema</h2>
+          <p style={styles.infoDescription}>
+            Il nostro sistema semplifica il processo di normalizzazione dei dati nei file Excel attraverso un flusso di
+            lavoro guidato e intuitivo.
+          </p>
+
+          <div style={styles.stepsGrid}>
+            <div style={styles.stepCard}>
+              <div style={styles.stepNumber}>1</div>
+              <h3 style={styles.stepTitle}>Carica i file</h3>
+              <p style={styles.stepDescription}>
+                Carica il file di lavoro e il dizionario, oppure seleziona file già esistenti nel sistema.
+              </p>
+            </div>
+
+            <div style={styles.stepCard}>
+              <div style={styles.stepNumber}>2</div>
+              <h3 style={styles.stepTitle}>Seleziona colonna</h3>
+              <p style={styles.stepDescription}>
+                Scegli il foglio di lavoro e la colonna da elaborare per la normalizzazione dei dati.
+              </p>
+            </div>
+
+            <div style={styles.stepCard}>
+              <div style={styles.stepNumber}>3</div>
+              <h3 style={styles.stepTitle}>Conferma sostituzioni</h3>
+              <p style={styles.stepDescription}>
+                Rivedi i suggerimenti automatici e conferma le sostituzioni da applicare ai tuoi dati.
+              </p>
+            </div>
+
+            <div style={styles.stepCard}>
+              <div style={styles.stepNumber}>4</div>
+              <h3 style={styles.stepTitle}>Scarica risultati</h3>
+              <p style={styles.stepDescription}>
+                Ottieni i file elaborati e le statistiche dettagliate dell'operazione completata.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       <style jsx>{`
         @keyframes spin {
