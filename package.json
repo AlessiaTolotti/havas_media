@@ -2,10 +2,11 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build"
-  },
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "vercel-build": "next build"
+},
   "dependencies": {
     "next": "13.4.12",
     "react": "18.2.0",
